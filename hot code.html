@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResCafe Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            color: #2e2e2e; /* Dark gray text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4a2c1e; /* Dark brown header background */
+            color: #fff; /* White text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            background-color: #8b572a; /* Brown navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff; /* White text color for links */
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .menu-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc; /* Gray border between items */
+            padding-bottom: 20px;
+            display: flex;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none; /* Remove border from last item */
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-image {
+            flex: 0 0 auto; /* Allow image to adjust width */
+            margin-right: 20px;
+            width: 20%; /* Set width of image as percentage of font size */
+            height: auto; /* Maintain aspect ratio */
+            
+        }
+
+        .item-details {
+            flex: 1; /* Take remaining space */
+        }
+
+        .item-name {
+            font-size: 1.2em;
+            color: #4a2c1e; /* Dark brown text color for item name */
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            color: #666; /* Dark gray text color for item description */
+            margin-bottom: 10px;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #8b572a; /* Brown text color for item price */
+        }
+
+        .add-to-cart {
+            background-color: #8b572a; /* Brown button background */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 8px 16px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #4a2c1e; /* Dark brown on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ResCafe Menu</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="cart.html">cart</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://media-files.tryordersystem.com/menu/lepain/0a865551-8c1b-5034-b0a1-7eca8f68e29a/6415ad68e5454.jpeg">
+            </div>
+            <div class="item-details">
+                <div class="item-name"> Americano</div>
+               
+                <div class="item-price">$2.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://foodics-console-production.s3.eu-west-1.amazonaws.com/images/180452_1640519532_95345266-3c85-4247-8473-bfa2fc11326f.jpg" alt=" Latte ">
+            </div>
+            <div class="item-details">
+                <div class="item-name"> Latte </div>
+                
+                <div class="item-price">$4.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://foodics-console-production.s3.eu-west-1.amazonaws.com/images/180452_1640519490_95345225-ed34-4bf1-acf5-444815735b1f.jpg" alt="cappuccino">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Cappuccino</div>
+               
+                <div class="item-price">$3.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://foodics-console-production.s3.eu-west-1.amazonaws.com/images/180452_1640519415_953451b3-575c-4d3a-8b6b-cac0c37d20cf.jpg" alt="Espresso">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Espresso</div>
+         
+                <div class="item-price">$4.00</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://foodics-console-production.s3.eu-west-1.amazonaws.com/images/180452_1640519434_953451d0-89bd-492d-a6bc-1a5e1f2de9dd.jpg" alt="Cortado">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Cortado</div>
+         
+                <div class="item-price">$2.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <script>
+            // Retrieve cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Select all "Add to Cart" buttons
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    
+            // Event listener for "Add to Cart" button click
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+    
+            // Function to add item to cart
+            function addToCart(event) {
+                const button = event.target;
+                const itemName = button.dataset.name;
+                const itemPrice = parseFloat(button.dataset.price);
+    
+                // Add item to cart
+                cartItems.push({ name: itemName, price: itemPrice });
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+                alert('Item added to cart!');
+            }
+        </script>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+

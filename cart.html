@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResCafe Cart</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            color: #2e2e2e; /* Dark gray text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4a2c1e; /* Dark brown header background */
+            color: #fff; /* White text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            background-color: #8b572a; /* Brown navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff; /* White text color for links */
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-section {
+            background-color: #f9f6f2; /* Light brown background for about section */
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .about-section h2 {
+            color: #4a2c1e; /* Dark brown heading color */
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .about-section p {
+            color: #666; /* Dark gray text color */
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #8b572a; /* Brown footer background */
+            color: #fff; /* White text color */
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+       
+</head>
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="total-price">0.00</span></p>
+        <button id="checkout-btn">Checkout</button>
+    </section>
+
+    <script>
+        // Select all elements with class "add-to-cart"
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        // Loop through each button and attach event listener
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
+        });
+
+        // Function to add item to cart
+        function addToCart(event) {
+            const button = event.target;
+            const itemName = button.dataset.name;
+            const itemPrice = parseFloat(button.dataset.price);
+
+            // Retrieve existing cart items from local storage or initialize empty array
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add new item to cart
+            cartItems.push({ name: itemName, price: itemPrice });
+
+            // Store updated cart items back to local storage
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+
+            // Redirect to cart page
+            window.location.href = 'cart.html';
+        }
+    </script>
+</body>
+</html>

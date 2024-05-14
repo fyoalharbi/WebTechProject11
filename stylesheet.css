@@ -1,0 +1,37 @@
+#header{
+    
+    font-size: 45px;
+    
+}
+.Header_container{
+    height:150px;
+    width:450px;
+    padding-left: 0px;
+    padding-top:25px;
+    display: grid;
+}
+.header_item{
+    grid-row-start: 2;
+    align-self: center;
+}
+.cafe_container{
+    display: grid;
+    height:100%;
+    width:750px;
+    
+    
+}
+
+p{
+    text-align: center;
+}
+img{
+    width: 25px;
+    height: 25px;
+}
+.aboutus{
+    margin-top: 150px;
+    width:450px;
+    height:450px;
+    letter-spacing: 0.35mm;
+}

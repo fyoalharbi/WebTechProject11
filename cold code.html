@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResCafe Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            color: #2e2e2e; /* Dark gray text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4a2c1e; /* Dark brown header background */
+            color: #fff; /* White text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            background-color: #8b572a; /* Brown navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff; /* White text color for links */
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .menu-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc; /* Gray border between items */
+            padding-bottom: 20px;
+            display: flex;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none; /* Remove border from last item */
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-image {
+            flex: 0 0 auto; /* Allow image to adjust width */
+            margin-right: 20px;
+            width: 20%; /* Set width of image as percentage of font size */
+            height: auto; /* Maintain aspect ratio */
+            
+        }
+
+        .item-details {
+            flex: 1; /* Take remaining space */
+        }
+
+        .item-name {
+            font-size: 1.2em;
+            color: #4a2c1e; /* Dark brown text color for item name */
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            color: #666; /* Dark gray text color for item description */
+            margin-bottom: 10px;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #8b572a; /* Brown text color for item price */
+        }
+
+        .add-to-cart {
+            background-color: #8b572a; /* Brown button background */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 8px 16px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #4a2c1e; /* Dark brown on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ResCafe Menu</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="cart.html">cart</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://media-files.tryordersystem.com/menu/lepain/360bb1d0-f790-4fbf-aed9-c7d7451db26e/64ad12cb6f5a6.jpeg">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Ice Americano</div>
+               
+                <div class="item-price">$2.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://media-files.tryordersystem.com/menu/lepain/7bc7107e-4b10-57c2-9cc6-84be00f4d407/6415ae17250b1.jpeg" alt="Iced Spanish Latte ">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Iced Spanish Latte </div>
+                
+                <div class="item-price">$4.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://media-files.tryordersystem.com/menu/lepain/bee2efa3-10ab-5a94-a148-070ea22ad8c4/6415ae326045f.jpeg" alt="Ice Latte">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Ice Latte</div>
+               
+                <div class="item-price">$3.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://media-files.tryordersystem.com/menu/lepain/3ed97469-900c-4dbb-88e0-a92e17025193/64f458ddc8c40.jpeg" alt="Orange Juise">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Orange Juise</div>
+         
+                <div class="item-price">$4.00</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            </div>
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="https://foodics-console-production.s3.eu-west-1.amazonaws.com/images/180452_1691048803_99cccc52-2bec-45b8-aa3f-9922d34f7cdd.jpg" alt="Ice Hibiscus">
+            </div>
+            <div class="item-details">
+                <div class="item-name">Ice Hibiscus</div>
+         
+                <div class="item-price">$2.50</div>
+                <button class="add-to-cart">Add to Cart</button>
+
+        </div>
+        <script>
+            // Retrieve cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    
+            // Select all "Add to Cart" buttons
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    
+            // Event listener for "Add to Cart" button click
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+    
+            // Function to add item to cart
+            function addToCart(event) {
+                const button = event.target;
+                const itemName = button.dataset.name;
+                const itemPrice = parseFloat(button.dataset.price);
+    
+                // Add item to cart
+                cartItems.push({ name: itemName, price: itemPrice });
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+                alert('Item added to cart!');
+            }
+        </script>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ice americano
+
+ice Spanish latte 
+
+ice latte
+
+orange juice
+
+Ice hibiscus
+
